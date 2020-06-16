@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="display" :width="dialogWidth">
+  <v-dialog v-model="display" :content-class="hideTabs ? 'datetime-picker hide-tabs' : 'datetime-picker'" :width="dialogWidth">
     <template v-slot:activator="{ on }">
       <v-text-field
         v-bind="textFieldProps"
@@ -55,6 +55,12 @@
     </v-card>
   </v-dialog>
 </template>
+
+<style>
+.datetime-picker.hide-tabs .v-tabs-bar {
+  display: none;
+}
+</style>
 
 <script>
 import { format, parse } from 'date-fns'
@@ -116,6 +122,10 @@ export default {
     },
     timePickerProps: {
       type: Object
+    },
+    hideTabs: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
