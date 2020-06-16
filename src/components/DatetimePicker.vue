@@ -46,8 +46,8 @@
         </v-tabs>
       </v-card-text>
       <v-card-actions>
-        <v-spacer></v-spacer>
         <slot name="actions" :parent="this">
+          <v-spacer></v-spacer>
           <v-btn color="grey lighten-1" text @click.native="clearHandler">{{ clearText }}</v-btn>
           <v-btn color="green darken-1" text @click="okHandler">{{ okText }}</v-btn>
         </slot>
