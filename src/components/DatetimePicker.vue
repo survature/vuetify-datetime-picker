@@ -195,6 +195,11 @@ export default {
   watch: {
     datetime: function() {
       this.init()
+    },
+    display: function() {
+      if (this.display && !this.datetime) {
+        this.$emit('input', this.$moment().toDate())
+      }
     }
   }
 }
