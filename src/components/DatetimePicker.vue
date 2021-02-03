@@ -208,7 +208,7 @@ export default {
     },
     display: function() {
       if (this.display && !this.datetime) {
-        this.$emit('input', this.$moment().toDate())
+        this.$emit('input', new Date())
       }
     }
   }
